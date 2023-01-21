@@ -273,7 +273,7 @@ MonoBehaviour:
   player: {fileID: 0}
   jumpVal: 300
   speed: 5
-  score: 0
+  score: 2
 --- !u!1 &454218912
 GameObject:
   m_ObjectHideFlags: 0
@@ -852,7 +852,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ec575ae376334349bbf78c283303bc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m: {fileID: 264118331}
+  m: {fileID: 0}
   pointsText: {fileID: 1249237225}
   points: 20
 --- !u!114 &1840249953
