@@ -7,6 +7,7 @@ TagManager:
   - ground
   - spike
   - point
+  - next
   layers:
   - Default
   - TransparentFX

@@ -9,6 +9,7 @@ public class Movement : MonoBehaviour
 
     bool onGround = false;
     public float jumpVal;
+    public float speed;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,10 @@ public class Movement : MonoBehaviour
     void Update()
     {
         playerJump();
+
+        float x = Input.GetAxisRaw("Horizontal");
+        float y = Input.GetAxisRaw("Vertical");
+        player.velocity = new Vector2(x * speed, y * speed);
     }
 
     public void playerJump()
