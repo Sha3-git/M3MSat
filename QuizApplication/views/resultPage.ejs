@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="css/styles.css">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tracker</title>   
+</head>
+
+<body>
+<form action="/GOTOquizPage" method="get">  
+    <div class="question-container" id="question">
+        <h1 class="score">You got: <%= result %>/10 </h1>
+
+        <% for(var i = 0; i < quizLists.length; i++) { %>
+            <% if (quizLists[i].correct == true) { %>
+                <%- include("partials/quizQuestionCorrectAnswer.ejs", {quizList : quizLists[i], i : i}) %>
+            <% } else { %>
+                <%- include("partials/quizQuestionWrongAnswer.ejs", {quizList : quizLists[i], i : i}) %>
+            <% } %>
+        <% } %>
+        
+        <h2 class="score">Today's hardest question was: </h2>
+        <h2 class="score"><%= worstQuestion.question %> </h2>
+    </div>
+    
+</form>
+
+</body>
+</html>
+
