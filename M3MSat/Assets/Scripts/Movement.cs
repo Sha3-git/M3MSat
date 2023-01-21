@@ -8,8 +8,10 @@ public class Movement : MonoBehaviour
     Rigidbody2D player;
 
     bool onGround = false;
+    bool scorePoint = false;
     public float jumpVal;
     public float speed;
+    public int score = 2;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +26,13 @@ public class Movement : MonoBehaviour
 
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
+    
         player.velocity = new Vector2(x * speed, y * speed);
+        if(scorePoint == true)
+            {
+                score+=1;
+            }
+            scorePoint = false;
     }
 
     public void playerJump()
@@ -33,6 +41,7 @@ public class Movement : MonoBehaviour
         {
             player.AddForce(Vector2.up * jumpVal);
             onGround = false;
+            Debug.Log("Jump");
         }
     }
 
@@ -40,6 +49,13 @@ public class Movement : MonoBehaviour
         if(other.gameObject.CompareTag("ground"))
         {
              onGround = (onGround == false)? true : false;
+        }
+        if(other.gameObject.CompareTag("point"))
+        {
+            // onGround = (onGround == false)? true : false;
+            scorePoint = true;
+            other.gameObject.SetActive(false);
+            Debug.Log("hit");
         }
     }
 }

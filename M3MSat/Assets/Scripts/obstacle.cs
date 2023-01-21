@@ -5,12 +5,12 @@ using UnityEngine;
 public class obstacle : MonoBehaviour
 {
     [SerializeField]
-    public GameObject spike;
+    //public GameObject spike;
     public float speed;
     // Start is called before the first frame update
     void Start()
     {
-        spawn();
+        //spawn();
     }
 
     // Update is called once per frame
@@ -19,9 +19,10 @@ public class obstacle : MonoBehaviour
         
     }
 
-    public void spawn()
-    {
-       GameObject spikeSpawn  = Instantiate(spike, transform.position, transform.rotation);
-       //spim
+   private void OnCollisionEnter2D(Collision2D other) {
+        if(other.gameObject.CompareTag("Untagged"))
+        {
+            Debug.Log("point");
+        }
     }
 }

@@ -20,7 +20,7 @@ public class spikeScript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.CompareTag("next"))
         {
-            obstacle.spawn();
+            //obstacle.spawn();
         }
     }
 }
